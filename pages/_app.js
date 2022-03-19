@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { MantineProvider, Box, useMantineTheme } from "@mantine/core";
+import { MantineProvider, Box, useMantineTheme, Group } from "@mantine/core";
 
 function MyApp({ Component, pageProps }) {
   const theme = useMantineTheme();
@@ -10,15 +10,18 @@ function MyApp({ Component, pageProps }) {
         // fontFamily: "'Neonderthaw', cursive",
       }}
     >
-      <Box
-        sx={{
-          background: "#04250b",
-          height: "100vh",
-          overflow: "scroll",
-        }}
-      >
-        <Component {...pageProps} />
-      </Box>
+      <Group position="center">
+        <Box
+          sx={{
+            background: "#04250b",
+            height: "100vh",
+            overflow: "scroll",
+            maxWidth: "500px",
+          }}
+        >
+          <Component {...pageProps} />
+        </Box>
+      </Group>
     </MantineProvider>
   );
 }
